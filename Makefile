@@ -2,7 +2,7 @@
 # Makefile that builds btest and other helper programs for the CS:APP data lab
 #
 CC = gcc
-CFLAGS = -O -Wall -Werror -Wno-error=uninitialized -m64 -g
+CFLAGS = -O -Wall -Werror -Wno-error=uninitialized -m64 -g -Wno-unused-but-set-variable
 LIBS = -lm
 
 %.o: %.c

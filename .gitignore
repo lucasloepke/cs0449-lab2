@@ -1,0 +1,6 @@
+common.o
+pointer.o
+ptest
+ptest.dSYM/
+ptest.o
+Makefile

@@ -103,7 +103,13 @@ void swapInts(int *i1, int *i2){
  *   Pointer operators: [] (Array Indexing Operator)
  */
 void serializeBE(unsigned char *array, int value) {
-    // Write your code here!
+  /* I cast the pointer of hte value to an unsigned char pointer to access individual bytes.
+  Then I assign the bytes to the array in big-endian order*/
+  unsigned char *ptr = (unsigned char*)&value;
+  *(array+0) = *(ptr+3);
+  *(array+1) = *(ptr+2);
+  *(array+2) = *(ptr+1);
+  *(array+3) = *(ptr);
 }
 
 /*
