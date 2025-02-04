@@ -155,8 +155,8 @@ int stringLength(char *s) {
  *   Pointer operators: [] (Array Indexing Operator)
  */
 int stringSpan(char * str1, char * str2) {
-  char str1 = *str1;
-  char str2 = *str2;
+  //char str1 = *str1;
+  //char str2 = *str2;
   return 2;
 }
 
