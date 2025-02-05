@@ -160,8 +160,13 @@ int withinArray(int *intArray, int size, int *ptr) {
  *   Pointer operators: [] (Array Indexing Operator)
  */
 int stringLength(char *s) {
-  
-  return 2;
+  /* I increment the pointer until it reacher the null character, and then return the increment count*/
+  int i = 0;
+  while (*s != '\0') {
+    i++;
+    s++;
+  }
+  return i;
 }
 
 /*
@@ -174,9 +179,25 @@ int stringLength(char *s) {
  *   Pointer operators: [] (Array Indexing Operator)
  */
 int stringSpan(char * str1, char * str2) {
-  //char str1 = *str1;
-  //char str2 = *str2;
-  return 2;
+  /* For each character in str1 I check if it is found in str2. End when str1 char not found in
+  str2 or when str1 ends.*/
+  char* s1 = str1;
+  int count = 0;
+  while (*s1) {
+    char* s2 = str2;
+    int found = 0;
+    while (*s2) {
+      if (*s1 == *s2) {
+          found = 1;
+          break;
+      }
+      s2++;
+    }
+    if (!found) break;
+    count++;
+    s1++;
+  }
+  return count;
 }
 
 /*
@@ -205,6 +226,17 @@ int stringSpan(char * str1, char * str2) {
  *   Pointer operators: [] (Array Indexing Operator)
  */
 void selectionSort(int *array, int arrLength) {
-  // Your code here
-
+  /* I implemented selection sort as specified in the pseudo code */
+  for (int i = 0; i < arrLength - 1; i++) {
+    int *minPtr = array + i;
+    for (int j = i + 1; j < arrLength; j++) { // find minimum element
+      if (*(array + j) < *minPtr)
+        minPtr = array + j;
+    }
+    if (minPtr != array + i) { // swap
+      int temp = *(array + i);
+      *(array + i) = *minPtr;
+      *minPtr = temp;
+    }
+  }
 }
