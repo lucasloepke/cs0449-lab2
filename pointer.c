@@ -120,19 +120,20 @@ void serializeBE(unsigned char *array, int value) {
  *   Pointer operators: [] (Array Indexing Operator)
  */
 void deserializeBE(int* value, const unsigned char *array) {
-unsigned char one, two, three, four;
-one = *(array+0);
-two = *(array+1);
-three = *(array+2);
-four = *(array+3);
+  /* I obtain the numbes from array*/
+  unsigned char one, two, three, four;
+  one = *(array+0);
+  two = *(array+1);
+  three = *(array+2);
+  four = *(array+3);
 
-unsigned int jeb, bob, henry, luis;
-jeb = ((int) one << 24);
-bob = ((int) two << 16);
-henry = ((int) three << 8);
-luis = ((int) four);
+  unsigned int jeb, bob, henry, luis;
+  jeb = ((int) one << 24);
+  bob = ((int) two << 16);
+  henry = ((int) three << 8);
+  luis = ((int) four);
 
-*value = jeb | bob | henry | luis;
+  *value = jeb | bob | henry | luis;
 }
 
 /*
@@ -146,8 +147,8 @@ luis = ((int) four);
  *   Pointer operators: [] (Array Indexing Operator)
  */
 int withinArray(int *intArray, int size, int *ptr) {
-  // Your code here
-  return 2;
+  /* I check if ptr appears after the beginning of intArray but also before its end. True returns 1*/
+  return (intArray <= ptr && ptr < intArray + size);
 }
 
 /*
@@ -159,7 +160,7 @@ int withinArray(int *intArray, int size, int *ptr) {
  *   Pointer operators: [] (Array Indexing Operator)
  */
 int stringLength(char *s) {
-  // Your code here
+  
   return 2;
 }
 
