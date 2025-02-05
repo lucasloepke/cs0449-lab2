@@ -120,7 +120,19 @@ void serializeBE(unsigned char *array, int value) {
  *   Pointer operators: [] (Array Indexing Operator)
  */
 void deserializeBE(int* value, const unsigned char *array) {
-    // Write your code here!
+unsigned char one, two, three, four;
+one = *(array+0);
+two = *(array+1);
+three = *(array+2);
+four = *(array+3);
+
+unsigned int jeb, bob, henry, luis;
+jeb = ((int) one << 24);
+bob = ((int) two << 16);
+henry = ((int) three << 8);
+luis = ((int) four);
+
+*value = jeb | bob | henry | luis;
 }
 
 /*
